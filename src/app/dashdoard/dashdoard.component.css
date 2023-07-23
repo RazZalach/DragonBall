@@ -1,0 +1,60 @@
+.banner-row {
+  background-image: url('https://img001.prntscr.com/file/img001/QcO50bWtQoaTDGC9l7zyXg.jpg');
+  
+  background-position: center;
+  height: 65vh;
+}
+#vidoesbanner{
+  margin-left: 10px;
+  width: 33.333333%;
+  margin-top: 10%;
+}
+
+.card {
+  height: 200px;
+  cursor: pointer;
+}
+
+.bg-dragon-ball {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+.text-theme-primary {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-theme-primary i {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+/* Mobile Styles */
+@media (max-width: 767px) {
+  #vidoesbanner{
+    margin-left: 10px;
+    width: 100%;
+    margin-top: 10%;
+  }
+  .banner-row {
+    height: auto;
+    padding: 20px;
+  }
+
+  .card {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .coll-md-4 {
+    width: 100%;
+    margin-left: 0;
+  }
+}

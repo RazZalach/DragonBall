@@ -1,0 +1,144 @@
+<div class="container" style="direction: rtl; text-align: right;" dir="rtl" lang="he">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align: center;">{{ character?.data.name }}</h2>
+        <div class="card">
+          <img [src]="character?.data.image_link" class="card-img-top" style="height: 400px;" alt="{{ character?.data.name }}">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">{{ character?.data.category.category }}</h5>
+            <p class="card-text">{{ character?.data.description }}</p>
+            <p><strong>תאריך יצירה:</strong> {{ character?.data.createdAt.toMillis() | date }}</p>
+            <p><strong>רמת כח:</strong> {{ character?.data.powerLevel }}</p>
+            <p><strong>סטטוס:</strong> {{ character?.data.status }}</p>
+            <img [src]="icon" style="width: 300px; height: 200px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Content</h5>
+            <div [innerHTML]="character?.data.content"></div>
+            <img [src]="getGifUrl(character?.data.name)" alt="">
+            <ng-container *ngFor="let video of videos$ | async">
+              <ng-container *ngIf="video.title.toLowerCase().includes(character?.data.name.toLowerCase())">
+                <div class="banner" style="margin-right: 20px;">
+                  <h1 style="text-align: center;">{{ video.title }}</h1>
+                  <p style="text-align: center;">{{ video.description }} </p>
+                  <div class="card mb-3">
+                    <video [src]="video.videoURL" controls ></video>
+                  </div>
+                </div>
+              </ng-container>
+             
+            </ng-container>
+            
+            
+            <div [ngSwitch]="character?.data.name">
+              <ng-container *ngSwitchCase="'Jeice'">
+                <a href="/info?item=5#Jeice"><h3>לעוד פרטים על ג׳יס לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Burter'">
+                <a href="/info?item=5#Burter"><h3>לעוד פרטים על בארטר לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Frieza'">
+                <a href="/info?item=6#Frieza"><h3>לעוד פרטים על פריזה לחצו כאן</h3></a>
+                <a href="/info?item=1"><h3>לעוד פרטים על סאגת פריזה לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Cell'">
+                <a href="/info?item=2#Cell"><h3>לעוד פרטים על סל לחצו כאן</h3></a>
+
+              </ng-container>
+              <ng-container *ngSwitchCase="'Majin Buu'">
+                <a href="/info?item=3#Majin%20Buu"><h3>לעוד פרטים על מאג׳ין בו לחצו כאן</h3></a>
+    
+              </ng-container>
+              <ng-container *ngSwitchCase="'Kid Buu'">
+                <a href="/info?item=3#Kid%20Buu"><h3>לעוד פרטים על קיד בו לחצו כאן</h3></a>
+   
+              </ng-container>
+              <ng-container *ngSwitchCase="'Android17'">
+                <a href="/info?item=2#Android17"><h3>לעוד פרטים על אנדרואיד 17  לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Android18'">
+                <a href="/info?item=2#Android18"><h3>לעוד פרטים על אנדרואיד 18  לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Android13'">
+                <a href="/info?item=2#Android13"><h3>לעוד פרטים על אנדרואיד 13  לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Android19'">
+                <a href="/info?item=2#Android19"><h3>לעוד פרטים על אנדרואיד 19  לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Dr. Gero'">
+                <a href="/info?item=2#Dr.%20Gero"><h3>לעוד פרטים על ד״ר ג׳ירו לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Rikum'">
+                <a href="/info?item=5#Rikum"><h3>לעוד פרטים על ריקום לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Captain Ginyu'">
+                <a href="/info?item=5#Captain%20Ginyu"><h3>לעוד פרטים על קפטן גינאו לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'Supreme Kais'">
+                <a href="/info?item=4#Supreme%20Kais"><h3>לעוד פרטים על קאיושין לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchCase="'King Kai'">
+                <a href="/info?item=4#King%20Kai"><h3>לעוד פרטים על מלכי קאיו לחצו כאן</h3></a>
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+
+                <div [ngSwitch]="character?.data.category.category">
+                  <ng-container *ngSwitchCase="'Gods'">
+                    <a href="/info?item=4#Gods"><h3>לעוד פרטים על אלים  לחצו כאן</h3></a>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'LocalGods'">
+                    <a href="/info?item=4"><h3>לעוד פרטים על  אלים מקומיים לחצו כאן</h3></a>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Angels'">
+                    <a href="/info?item=4#Angels"><h3>לעוד פרטים על מלאכים לחצו כאן</h3></a>
+                  </ng-container>
+                  <ng-container *ngSwitchDefault>
+                    <a href="/info"><h3>לעוד פרטים על סאגות ושחקנים לחצו כאן</h3></a>
+                  </ng-container>
+                </div>
+
+
+
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div *ngIf="character?.data.comments && character?.data.comments.length > 0">
+          <h5>תגובות</h5>
+          <div class="comment-bubbles">
+            <div class="comment-bubble" *ngFor="let comment of character?.data.comments">
+              
+              <blockquote class="speech bubble">{{ comment }}</blockquote>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">הוסף תגובה</h5>
+            <form [formGroup]="commentForm"> 
+              <textarea id="comment" class="form-control" rows="3" formControlName="comment"></textarea>
+              <button class="btn btn-primary" (click)="addComment()">הוסף תגובה</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12" style="text-align: center;">
+          <button class="btn btn-primary" routerLink="/">חזרה</button>
+        </div>
+      </div>
+  </div>
+  

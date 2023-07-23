@@ -1,0 +1,63 @@
+video{
+    width:900; height:550; margin-right: 5%;
+}
+blockquote.bubble { 
+	
+    margin: 0 auto;
+	text-align: center;
+	height: 0;
+	box-sizing: content-box;
+	line-height: 1;
+}
+blockquote.speech {
+    background: url(https://cdn-icons-png.flaticon.com/512/2598/2598894.png);
+    background-size: 100% 100%;
+    width: 10rem; 
+    padding-top: 4%; 
+    padding-bottom: 10%; 
+  }
+  @media (max-width: 767px) {
+    
+    
+    .container {
+      padding: 0;
+    }
+    
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    
+    .card-img-top {
+      height: 200px;
+    }
+    
+    .card-body {
+      padding: 10px;
+    }
+    
+    .card-title {
+      font-size: 1.2rem;
+    }
+    
+    .comment-bubble {
+      margin-bottom: 10px;
+    }
+    
+    blockquote.speech {
+      width: 80%; 
+      padding-top: 8%; 
+      padding-bottom: 20%; 
+    }
+    
+    .btn-primary {
+      display: block;
+      margin: 10px auto;
+    }
+    video {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+      }
+  }
+  

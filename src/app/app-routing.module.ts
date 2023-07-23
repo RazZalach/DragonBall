@@ -1,0 +1,48 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DashdoardComponent } from './dashdoard/dashdoard.component';
+import { CategoriesComponent } from './categories/categories.component';
+
+import { AllCharacterComponent } from './characters/all-character/all-character.component';
+import { NewCharacterComponent } from './characters/new-character/new-character.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthGuard } from './service/auth.guard';
+import { StoreComponent } from './store/store/store.component';
+import { AllComponent } from './store/all/all.component';
+import { E404Component } from './e404/e404.component';
+import { AllVidoesComponent } from './vidoes/all-vidoes/all-vidoes.component';
+import { NewVidoeComponent } from './vidoes/new-vidoe/new-vidoe.component';
+import { InfoComponent } from './store/info/info.component';
+
+
+const routes: Routes = [
+  { path: '', component: StoreComponent  },
+  { path: 'character', component: AllComponent },
+
+  { path: 'wm', component: DashdoardComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
+    canActivate: [AuthGuard],
+  },
+
+
+
+  { path: 'characters', component: AllCharacterComponent, canActivate: [AuthGuard] },
+  { path: 'characters/new', component: NewCharacterComponent, canActivate: [AuthGuard] },
+
+  { path: 'vidoes', component: AllVidoesComponent, canActivate: [AuthGuard] },
+  { path: 'vidoes/new', component: NewVidoeComponent, canActivate: [AuthGuard] },
+
+  { path: 'info', component: InfoComponent},
+
+  {path:'**',component:E404Component}
+  
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

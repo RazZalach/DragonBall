@@ -1,0 +1,18 @@
+.bg-secondary-theme {
+    background-color: #000000; 
+    color: #FF0000; 
+}
+
+.text-theme-primary {
+    color: #FF0000; 
+    font-weight: bold;
+}
+
+.shadow-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.btn-theme {
+    background-color: #FF0000; 
+    color: #FFFFFF;
+}

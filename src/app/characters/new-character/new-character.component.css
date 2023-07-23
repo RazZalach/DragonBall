@@ -1,0 +1,18 @@
+.text-thme-primary {
+    color: #FF0000; 
+    font-weight: bold;
+}
+
+.shadow-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.img-preview {
+    border: 1px solid #FF0000; 
+    border-radius: 5px; 
+}
+
+.bg-theme {
+    background-color: #FF0000; 
+    color: #FFFFFF; 
+}
